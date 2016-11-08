@@ -7,3 +7,7 @@
 }
 
 .list {font-size: 0.8em;}
+
+section:hover {background-color: red;}
+
+ul > li {background-color: purple;}
