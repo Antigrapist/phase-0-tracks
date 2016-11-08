@@ -1,0 +1,13 @@
+#contact-info {font-size: 0.8em;}
+
+.job {background-color: #e9e5dc;
+	border-radius: 25px;
+	padding: 2px;
+	margin: 3px;
+}
+
+.list {font-size: 0.8em;}
+
+section:hover {background-color: red;}
+
+ul > li {background-color: purple;}
