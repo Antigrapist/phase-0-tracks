@@ -1,0 +1,26 @@
+-Enter the Elevator
+-Navigate to the control panel
+-Until the a floor has been selected:
+	-Consider the button for the highest floor that has not yet been evaluated
+		-if that button corresponds with the desired floor, press it
+		-if not, remove that button from consideration 
+-Press the close door button
+-wait until you arrive at the desired floor
+-exit the elevator
+
+
+Brushing my Teeth
+-Acquire brush and toothpaste
+-wet the brush head and apply toothpaste
+-Turn on the toothbrush
+-For two minutes:
+	-Randomly choose an unbrushed quadrent of the mouth
+	-Until thirty seconds has passed:
+		-run the brush once along the outside tooth surface 
+		-run the brush once along the top surface
+		-run the brush once along the inside surface
+	-Select a random unbrushed quadrent
+-Spit
+-Clean brush
+-Return brush and paste to the proper area
+-Rinse foul taste out of your mouth
