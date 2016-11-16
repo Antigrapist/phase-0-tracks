@@ -1,3 +1,23 @@
-body {
-	background-color: green;
+* {
+  background-color: gray;
+  
+}
+
+header {
+  text-align: center;
+
+}
+
+.column-1, .column-2 {
+  border: 5px solid;
+  padding: 2px;
+  width: 45%;
+  display: inline-block;
+  vertical-align: top;
+  font-family: georgia;
+}
+
+footer {
+  margin-top: 20px;
+  
 }
