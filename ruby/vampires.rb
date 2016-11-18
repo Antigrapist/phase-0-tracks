@@ -17,10 +17,10 @@ else
 	age_test=false
 end 
 
-if age_test && (wants_garlic ||wants_insurance)
+if age_test && (wants_garlic || wants_insurance)
 	is_vampire="Probably not a vampire."
 end
-if !age_test && !(wants_garlic ||wants_insurance)
+if !age_test && !(wants_garlic || wants_insurance)
 	is_vampire="Probably a vampire"
 end
 if !age_test && !wants_garlic && !wants_insurance
@@ -31,3 +31,6 @@ end
 #end
 
 puts is_vampire
+puts age_test
+puts wants_garlic
+puts wants_insurance
