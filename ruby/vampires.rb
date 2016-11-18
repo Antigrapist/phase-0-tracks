@@ -10,9 +10,9 @@
 # wants_insurance=gets.chomp
 full_name = "alex"
 age = "10"
-birth_year = "2006"
+birth_year = "2004"
 wants_garlic = false
-wants_insurance = true
+wants_insurance = false
 
 is_vampire="Results inconclusive"
 
@@ -22,17 +22,18 @@ else
 	age_test=false
 end 
 
-if age_test && (wants_garlic || wants_insurance)
-	is_vampire = "Probably not a vampire."
-end
-if !age_test && (!wants_garlic || !wants_insurance)
-	is_vampire = "Probably a vampire"
-end
-if !age_test && !wants_garlic && !wants_insurance
-	is_vampire = "Almost certainly a vampire."
+case 
+	when age_test && (wants_garlic || wants_insurance)
+		is_vampire = "Probably not a vampire."
+
+	when !age_test && (!wants_garlic || !wants_insurance)
+		is_vampire = "Probably a vampire"
+
+	when !age_test && !wants_garlic && !wants_insurance
+		is_vampire = "Almost certainly a vampire."
 end
 
-# if full_name.downcase ==  "drake cula" || "tu Fang"
+# when full_name.downcase ==  "drake cula" || "tu Fang"
 # 	is_vampire= "Definitely a vampire."
 # end
 
