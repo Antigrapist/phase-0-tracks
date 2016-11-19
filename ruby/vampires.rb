@@ -37,10 +37,10 @@ while counter < employee_total
 	#asking for true/false was causing problems in my testing
 
 
-	if birth_year + age == 2016
-		age_test=true
+	if birth_year + age != 2016
+		age_test = false
 	else
-		age_test=false
+		age_test = true
 	end 
 	 
 
@@ -52,11 +52,11 @@ while counter < employee_total
 		when age_test && (wants_garlic || wants_insurance)
 			is_vampire = "probably not a vampire."
 
-		# when !age_test && (!wants_garlic || !wants_insurance)
-		# 	is_vampire = "probably a vampire"
-
 		when !age_test && (!wants_garlic && !wants_insurance)
 		is_vampire = "almost certainly a vampire."
+
+		when !age_test && (!wants_garlic || !wants_insurance)
+			is_vampire = "probably a vampire"
 	end
 
 	
@@ -68,7 +68,7 @@ while counter < employee_total
 
 	continue_allergy_test = true
 	while continue_allergy_test == true
-		puts  "Do you have any allegies? Please list one, or type done"
+		puts  "Do you have any allegies? Please list one at a time, or type done to exit"
 		allergy=gets.chomp
 		if allergy.downcase == "sunshine"
 			is_vampire = "probably a vampire"
