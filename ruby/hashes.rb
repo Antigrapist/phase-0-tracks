@@ -18,12 +18,13 @@ client_details[:client_name] = gets.chomp
 puts "Which rooms will we be changing?"
 client_details[:rooms] = gets.chomp
 
-puts "What is the estimated budget?"
-client_details[:budget] = gets.chomp.to_i
+puts "What is the estimated budget in thousands of dollars?"
+client_details[:budget_thousands] = gets.chomp.to_i
 
 puts "Do they have kids? (y/n)"
-kids = gets.chomp
-if kids.downcase == "y"
+# kids = gets.chomp
+# if kids.downcase == "y"
+if gets.chomp == "y"
 	client_details[:kids] = true
 elsif kids == "n"
 	client_details[:kids] = false	
