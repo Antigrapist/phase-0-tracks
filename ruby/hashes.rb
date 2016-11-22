@@ -22,8 +22,6 @@ puts "What is the estimated budget in thousands of dollars?"
 client_details[:budget_thousands] = gets.chomp.to_i
 
 puts "Do they have kids? (y/n)"
-# kids = gets.chomp
-# if kids.downcase == "y"
 if gets.chomp.downcase == "y"
 	client_details[:kids] = true
 else client_details[:kids] = false	
@@ -32,6 +30,21 @@ end
 puts "What color scheme do they want?"
 client_details[:colors] = gets.chomp
 
-
-
+#Five questions should be enough. Let's print them out
 p client_details
+
+
+#Now to fix the data
+puts "Which key value would you like to modify?"
+updated_key = gets.chomp
+
+if updated_key == "none"
+	puts "Have a good day"
+else
+	puts "What would you like the value to be?"
+	client_details[updated_key.to_sym] = gets.chomp 
+# The new value will be a string, which is not ideal if updating :kids or :budget_thousands
+# But it seems like overkill to test for those cases just to change the data type
+	puts "The key #{updated_key} has been modified"
+	p client_details
+end
