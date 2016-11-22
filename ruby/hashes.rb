@@ -24,15 +24,13 @@ client_details[:budget_thousands] = gets.chomp.to_i
 puts "Do they have kids? (y/n)"
 # kids = gets.chomp
 # if kids.downcase == "y"
-if gets.chomp == "y"
+if gets.chomp.downcase == "y"
 	client_details[:kids] = true
-elsif kids == "n"
-	client_details[:kids] = false	
+else client_details[:kids] = false	
 end
 
-
-puts "What colors do they prefer?"
-
+puts "What color scheme do they want?"
+client_details[:colors] = gets.chomp
 
 
 
