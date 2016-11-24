@@ -1,35 +1,28 @@
 farmhouse_bed_assignments = {
-	kitchen: [
-	]
-	laundryroom: [
-		"Miranda the Hedgehog"
-	]
+	kitchen: [],
+	laundryroom: "Miranda the Hedgehog",
 
-	artroom:[
-		"Mandy"
-	]
+	artroom: "Mandy",
 
 	masterbedroom: [
 		"Grandmother", 
 		"Grandfather"
-	]
+	],
 
 	guestbedrooms: [ 
 		[
-			"Alex"
+			"Alex", 
 			"Austin"
 		],
 		{
-			raubach_family:[
-				"Jack"
-				"Sophia"
+			raubach_family: [
+				"Jack",
+				"Sophia",
 				"James the baby"
 			]
-			}
-			
 		},
 		[
-			"Joey"
+			"Joey",
 			"Courtney"
 		]
 	]
