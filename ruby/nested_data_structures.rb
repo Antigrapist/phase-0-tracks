@@ -27,3 +27,10 @@ farmhouse_bed_assignments = {
 		]
 	]
 }
+puts "Who will be staying in my room?"
+puts farmhouse_bed_assignments[:guestbedrooms][0][1] 
+
+puts "Who is in the only room with a private bathroom?" 
+puts farmhouse_bed_assignments[:masterbedroom] 
+puts "Who is staying with Jack?"
+puts farmhouse_bed_assignments[:guestbedrooms][1][:raubach_family][1..2]
