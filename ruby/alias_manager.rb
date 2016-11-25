@@ -1,6 +1,6 @@
 # Get the name
 # split the first and last names into different variables. Use .downcase in here to avoid capital letters
-# For each word, call a method that swaps the vowels.
+# For each name, call a method that swaps the vowels.
 	#Iterate through the string looking for vowels and changing them 
 	#Could hard code all five vowels
 #Now call a method that swaps the consonents 
@@ -10,26 +10,27 @@
 
 def next_vowel(name)
 	counter = 0
-	while counter < word.length
-		if word[counter] == 'a'
-			word[counter] = "e"
-		elsif word[counter] == "e"
-			word[counter] = "i"
-		elsif word[counter] == "i"
-			word[counter] = "o"
-		elsif word[counter] == "o"
-			word[counter] = "u"
-		elsif word[counter] == "u"
-			word[counter] = "a"	
+	while counter < name.length
+		if name[counter] == 'a'
+			name[counter] = "e"
+		elsif name[counter] == "e"
+			name[counter] = "i"
+		elsif name[counter] == "i"
+			name[counter] = "o"
+		elsif name[counter] == "o"
+			name[counter] = "u"
+		elsif name[counter] == "u"
+			name[counter] = "a"	
 		end
 
 		counter +=1
 	end	
+	name
 end
 
 def next_consonent(name)
 	counter = 0
-	while counter < word.length
+	while counter < name.length
 
 
 		counter += 1
@@ -45,3 +46,4 @@ def fake_name_maker(name)
 end
 
 
+puts next_vowel("tomato")
