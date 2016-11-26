@@ -23,6 +23,9 @@ def next_vowel(name)
 			name[counter] = "a"	
 		end
 
+
+
+
 		counter +=1
 	end	
 	name
