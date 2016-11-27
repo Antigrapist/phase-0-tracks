@@ -66,4 +66,5 @@ def fake_name_maker(name)
 end
 
 
-puts next_vowel("tomato")
+# puts next_vowel("tomato")
+puts next_consonent("abcdefg")
