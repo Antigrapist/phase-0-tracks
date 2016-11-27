@@ -31,22 +31,31 @@ def next_vowel(name)
 	name
 end
 
-# def next_consonent(name)
-# 	counter = 0
-# 	while counter < name.length
-# 		if name[counter] == "d" || "h" || "n" || "t"
-# 			name[counter]= name[counter].next.next
-# 		elsif name[counter] == "z"
-# 			name[counter] == "b"
-# 		elsif name[counter] == "a" || "e" || "i" || "o" || "u"
+def next_consonent(name)
+	counter = 0
+	while counter < name.length
+		# if name[counter] == "d" || "h" || "n" || "t"
+		# 	name[counter]= name[counter].next.next
+		# elsif name[counter] == "z"
+		# 	name[counter] == "b"
+		# elsif name[counter] == "a" || "e" || "i" || "o" || "u"
 				
-# 		else
-# 			name[counter]= name[counter].next
-# 		end
-# 		counter += 1	
-# 	end
-# 	name
-# end
+		# else
+		# 	name[counter]= name[counter].next
+		# end
+		case name[counter]
+			when "d", "h", "n", "t" 
+				name[counter]= name[counter].next.next
+			when "z"
+				name[counter] == "b"
+			when "a", "e", "i", "o", "u", " "
+			else
+				name[counter]= name[counter].next
+		end
+		counter += 1	
+	end
+	name
+end
 
 def fake_name_maker(name)
 	next_vowel(name.downcase)
