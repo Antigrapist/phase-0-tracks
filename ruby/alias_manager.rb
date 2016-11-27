@@ -22,27 +22,17 @@ def next_vowel(name)
 		elsif name[counter] == "u"
 			name[counter] = "a"	
 		end
-
-
-
-
 		counter +=1
 	end	
 	name
 end
 
+
+
+
 def next_consonent(name)
 	counter = 0
 	while counter < name.length
-		# if name[counter] == "d" || "h" || "n" || "t"
-		# 	name[counter]= name[counter].next.next
-		# elsif name[counter] == "z"
-		# 	name[counter] == "b"
-		# elsif name[counter] == "a" || "e" || "i" || "o" || "u"
-				
-		# else
-		# 	name[counter]= name[counter].next
-		# end
 		case name[counter]
 			when "d", "h", "n", "t" 
 				name[counter]= name[counter].next.next
@@ -67,4 +57,4 @@ end
 
 
 # puts next_vowel("tomato")
-puts next_consonent("abcdefg")
+puts next_consonent("abcdefg ")
