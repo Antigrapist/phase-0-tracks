@@ -48,13 +48,13 @@ def next_consonent(name)
 end
 
 def fake_name_maker(name)
-	next_vowel(name.downcase)
-	next_consonent(name.downcase)
-	name.split(' ')
-	fake_name = name[1] +" "+name[0] 
+	fake_name = next_vowel(next_consonent(name.downcase))
+	# name.split(' ')
+	# fake_name = name[1] +" "+name[0] 
 	fake_name
+
 end
 
 
 # puts next_vowel("tomato")
-puts next_consonent("abcdefg ")
+puts fake_name_maker("Felicia Torres")
