@@ -55,13 +55,16 @@ end
 
 # puts fake_name_maker("Felicia Torres")
 
+fake_name_list = {}
 continue = true
 puts "Provide a name to have it converted into a code name. Type quit when finished"
-while continue = true
+while continue == true
 	input=gets.chomp
-	if input = "quit"
+	if input == "quit"
 		continue = false
 	else
+		fake_name_list.merge! input.to_sym => fake_name_maker(input)
 		puts fake_name_maker(input)
 	end
 end
+p fake_name_list
