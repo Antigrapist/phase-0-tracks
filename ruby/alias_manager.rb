@@ -67,4 +67,4 @@ while continue == true
 		puts fake_name_maker(input)
 	end
 end
-p fake_name_list
+fake_name_list.each {|key, value| puts "#{key} is also known as #{value}"}
