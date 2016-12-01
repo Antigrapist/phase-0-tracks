@@ -5,6 +5,7 @@ class Santa
 		@ethnicity = ethnicity
 		reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
 		age = 0
+		puts "Initializing Santa instance ..."
 	end
 
 	def speak
@@ -14,12 +15,13 @@ class Santa
 	def eat_milk_and_cookies(cookie)
 		puts  "That was a good #{cookie}!" 
 	end
-
-	def initialize 
-		puts "Initializing Santa instance ..."
-	end
-
 end
 
 
 
+
+santas = []
+
+santas << Santa.new("m", "old white dude")
+santas << Santa.new("f", "NA")
+p santas
