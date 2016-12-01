@@ -15,6 +15,20 @@ class Santa
 	def eat_milk_and_cookies(cookie)
 		puts  "That was a good #{cookie}!" 
 	end
+
+	def celebrate_birthday
+		age +=1
+	end
+
+	def get_mad_at(bad_raindeer)
+		reindeer_ranking.delete_if { |x| x = bad_raindeer }
+		reindeer_ranking.insert(-1, bad_raindeer)
+	end
+
+	def gender=(new_gender)
+		@gender = new_gender
+	end
+
 end
 
 
