@@ -1,6 +1,6 @@
 class Santa
-	attr_reader :age, :ethnicity
-	attr_accessor :gender
+	attr_reader  :ethnicity
+	attr_accessor :gender, :age
 
 	def initialize(gender, ethnicity)
 		@gender = gender
@@ -32,13 +32,24 @@ end
 
 
 
-santas = []
+# santas = []
 
-santas << Santa.new("m", "old white dude")
-santas << Santa.new("f", "NA")
+# santas << Santa.new("m", "old white dude")
+# santas << Santa.new("f", "NA")
 
-santas[1].gender = ("kakuro")
-santas[0].get_mad_at("Dancer")
-santas[1].celebrate_birthday
-puts santas[1].age
-p santas
+# santas[1].gender = ("kakuro")
+# santas[0].get_mad_at("Dancer")
+# santas[1].celebrate_birthday
+# puts santas[1].age
+# p santas
+
+counter = 0 
+example_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A", "helicopter"]
+example_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+while counter <10000
+
+	santa = Santa.new(example_genders.sample, example_ethnicities.sample)
+	santa.age = rand(140)
+	puts "This Santa is #{santa.gender}, #{santa.ethnicity} and #{santa.age} years old"
+	counter += 1
+end
