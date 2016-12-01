@@ -53,4 +53,6 @@ while counter <10000
 	santa.age = rand(140)
 	puts "This Santa is #{santa.gender}, #{santa.ethnicity} and #{santa.age} years old"
 	counter += 1
+
 end
+
