@@ -4,10 +4,10 @@ class Hangman
 	attr_accessor :word_in_progress
 	attr_accessor :is_game_over
 
-	def initialize
-		@puzzle_word = ""
-		@guesses_remaining = 0
-		@is_game_over = false
+	def initialize(puzzle_word = "", guesses_remaining = 0, is_game_over=false)
+		@puzzle_word = puzzle_word
+		@guesses_remaining = guesses_remaining
+		@is_game_over = is_game_over
 	end
 
 
@@ -19,19 +19,29 @@ class Hangman
 		@puzzle_word.length.times do 
 			@word_in_progress << "_"	
 		end
-		@guesses_remaining = @puzzle_word.length
+		@guesses_remaining = @puzzle_word.length + 5
 	end
 
 	def submit_guess(letter)
 		if letter.length > 1
 			return "One letter at a time please"
-		elsif @letters_guessed
-
+		elsif @letters_guessed.include? (letter) 
+			return "You already guessed this letter, please guess a new one"
 		else
-			
+			@letters_guessed << letter
+			guesses_remaining -= 1
+			if @puzzle_word.include? letter
+
+				return "Correct!"
+			else
+				return "Sorry, that was incorrect"
+			end
 
 		end
 
+	end
+
+	def check_if_game_over
 	end
 
 end

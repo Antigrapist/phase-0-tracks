@@ -3,8 +3,8 @@ require_relative 'Hangman'
 describe Hangman do 
 	let (:hangman) { Hangman.new }
 
-	it "stores a word and outputs the number of guesses" do
-	expect(hangman.submit_puzzle_word("potato")).to eq 6
+	it "stores a word and outputs the number of guesses which is word length + 5" do
+	expect(hangman.submit_puzzle_word("potato")).to eq 11
 	end 
 
 	it "Make a guess with multiple letters and have it return an error" do
