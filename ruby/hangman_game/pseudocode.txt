@@ -1,0 +1,32 @@
+
+
+
+
+Method get_puzzle_word
+Input: string
+push lowercase version to a string or array, check that it doesn't have _ or spaces
+set max number of guesses .length + 3?
+output: number of guesses
+
+Method submit_guess
+input a one word string
+steps: check array of previous guesses, if it is in there, print an error message and exit
+if not, check to see if it's in the puzzle_word
+output number of guesses remaining 
+
+get_word_state
+
+input: none
+steps:
+output: string of dashes and guessed letters i.e. current_puzzle_state
+
+
+is_game_over
+input current_puzzle_state, guesses_remaining
+steps check to see if the game is over 
+output: true or false
+
+game_result
+input: nothing
+current_puzzle_state to see if the game was won (no _ remaining) or lost
+output: a string, either congratulations or try again next time.
