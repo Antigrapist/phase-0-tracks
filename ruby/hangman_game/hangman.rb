@@ -10,7 +10,6 @@ class Hangman
 		@puzzle_word.length.times do 
 			@word_in_progress << "_"	
 		end
-		 p @word_in_progress
 		@guesses_remaining = @puzzle_word.length
 	end
 
