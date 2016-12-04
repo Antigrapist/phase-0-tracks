@@ -7,14 +7,11 @@ class Hangman
 	def submit_puzzle_word(word)
 		@puzzle_word = word
 		@word_in_progress = []
-		@guesses_remaining = @puzzle_word.length
-
-		@puzzle_word.length.times do ||
-			@word_in_progress << "_"
-			
+		@puzzle_word.length.times do 
+			@word_in_progress << "_"	
 		end
-		p @word_in_progress
-		@guesses_remaining
+		 p @word_in_progress
+		@guesses_remaining = @puzzle_word.length
 	end
 
 
