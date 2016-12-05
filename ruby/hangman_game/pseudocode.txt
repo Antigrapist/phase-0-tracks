@@ -2,7 +2,7 @@
 
 
 
-Method get_puzzle_word
+Method submit_puzzle_word
 Input: string
 push lowercase version to a string or array, check that it doesn't have _ or spaces
 set max number of guesses .length + 3?

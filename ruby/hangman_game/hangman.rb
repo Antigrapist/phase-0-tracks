@@ -32,25 +32,32 @@ class Hangman
 			 @letters_guessed << letter
 			 @guesses_remaining -= 1
 			 if @puzzle_word.include? letter
+			 	counter = 0
+			 	while counter < @puzzle_word.length
+			 		if @puzzle_word[counter] == letter
+			 			@word_in_progress[counter] = letter
+			 		end	
+			 		counter +=1
+			 	end
 			 	return "Correct!"
 			 else
 				return "Sorry, that was incorrect"
 			 end
-		@puzzle_word
 		end
 
 	end
 
 	def check_if_game_over
 		if @word_in_progress.include? ("_") 
-			if guesses_remaining > 0
-				is_game_over = false
-			else is_game_over = true
+			if @guesses_remaining > 0
+				@is_game_over = false
+			else @is_game_over = true
+
 			end
 		else
-			is_game_over = true
+			@is_game_over = true
 		end
-		return is_game_over
+		return @is_game_over
 	end
 
 end

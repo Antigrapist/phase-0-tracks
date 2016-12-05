@@ -19,7 +19,7 @@ describe Hangman do
 		expect(hangman.submit_guess("abc")).to eq "One letter at a time please"
 	end
 
-	it "after a word has been submitted, an incorrect guess gives a message and lowers the number of remaining guesses" do
+	it "after a word has been submitted, can an incorrect guess give a message and lowers the number of remaining guesses" do
 		hangman.submit_puzzle_word("potato")
 		expect(hangman.submit_guess("z")).to eq "Sorry, that was incorrect"
 		expect(hangman.letters_guessed).to eq ["z"]
@@ -27,7 +27,7 @@ describe Hangman do
 		expect(hangman.guesses_remaining).to eq 10
 	end
 
-	it "after a word has been submitted, a duplicate guess gives an error" do
+	it "can a duplicate guess give an error" do
 		hangman.submit_puzzle_word("potato")
 		hangman.submit_guess("z")
 		expect(hangman.submit_guess("z")).to eq "You already guessed this letter, please guess a new one"
@@ -35,9 +35,10 @@ describe Hangman do
 		expect(hangman.guesses_remaining).to eq 10
 	end
 
-	it "a correct guess gives an error" do
+	it "can a correct guess give an error" do
 		hangman.submit_puzzle_word("potato")
 		expect(hangman.submit_guess("p")).to eq "Correct!"
+		expect(hangman.letters_guessed).to eq ["p"]
 		expect(hangman.word_in_progress).to eq ["p","_","_","_","_","_"]
 		expect(hangman.guesses_remaining).to eq 10
 	end
