@@ -35,12 +35,21 @@ describe Hangman do
 		expect(hangman.guesses_remaining).to eq 10
 	end
 
-	it "can a correct guess give an error" do
+	it "can a correct guess provide a correct game state" do
 		hangman.submit_puzzle_word("potato")
 		expect(hangman.submit_guess("p")).to eq "Correct!"
 		expect(hangman.letters_guessed).to eq ["p"]
 		expect(hangman.word_in_progress).to eq ["p","_","_","_","_","_"]
 		expect(hangman.guesses_remaining).to eq 10
+	end
+
+	it "can two correct guess provide a correct game state" do
+		hangman.submit_puzzle_word("potato")
+		expect(hangman.submit_guess("p")).to eq "Correct!"
+		expect(hangman.submit_guess("o")).to eq "Correct!"
+		expect(hangman.letters_guessed).to eq ["p", "o"]
+		expect(hangman.word_in_progress).to eq ["p","o","_","_","_","o"]
+		expect(hangman.guesses_remaining).to eq 9
 	end
 
 end

@@ -51,11 +51,11 @@ class Hangman
 		if @word_in_progress.include? ("_") 
 			if @guesses_remaining > 0
 				@is_game_over = false
-			else @is_game_over = true
+			else @is_game_over = "You have lost :("
 
 			end
 		else
-			@is_game_over = true
+			@is_game_over = "You have won! Huzzah!"
 		end
 		return @is_game_over
 	end
@@ -65,10 +65,20 @@ end
 
 
 
-#driver code
-# puts "Please submit the word you want your opponent to guess"
-# game = Hangman.new
-# game.submit_puzzle_word("Potato") #Need to add UI that uses gets.chomp
-# puts "Now it's time to guess!" 
-# until @is_game_over
-# 	puts "Please submit a letter"
+# driver code
+
+puts "Please submit the word you want Player 2 to guess"
+game = Hangman.new
+submitted_puzzle_word =gets.chomp
+game.submit_puzzle_word(submitted_puzzle_word.downcase) 
+puts "Now it's time for player 2 to guess!"
+p game.word_in_progress 
+until game.is_game_over
+	puts "Please submit a letter"
+	# submitted_letter = gets.chomp
+	puts game.submit_guess(gets.chomp.downcase)
+	p game.word_in_progress
+	puts "You have #{game.guesses_remaining} guesses remaining"
+	game.check_if_game_over
+end
+puts @is_game_over
