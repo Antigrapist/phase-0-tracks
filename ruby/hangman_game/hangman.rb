@@ -5,10 +5,10 @@ class Hangman
 	attr_accessor :is_game_over
 	attr_accessor :letters_guessed
 
-	def initialize(puzzle_word = "", guesses_remaining = 0, is_game_over=false)
-		@puzzle_word = puzzle_word
-		@guesses_remaining = guesses_remaining
-		@is_game_over = is_game_over
+	def initialize
+		@puzzle_word = ""
+		@guesses_remaining = 0
+		@is_game_over = false
 	end
 
 
@@ -69,16 +69,19 @@ end
 
 puts "Please submit the word you want Player 2 to guess"
 game = Hangman.new
-submitted_puzzle_word =gets.chomp
-game.submit_puzzle_word(submitted_puzzle_word.downcase) 
+
+game.submit_puzzle_word(gets.chomp.downcase) 
 puts "Now it's time for player 2 to guess!"
 p game.word_in_progress 
+
 until game.is_game_over
+	puts ""
+	puts ""
+	puts "You have #{game.guesses_remaining} guesses remaining"
 	puts "Please submit a letter"
-	# submitted_letter = gets.chomp
 	puts game.submit_guess(gets.chomp.downcase)
 	p game.word_in_progress
-	puts "You have #{game.guesses_remaining} guesses remaining"
 	game.check_if_game_over
 end
-puts @is_game_over
+
+puts game.is_game_over

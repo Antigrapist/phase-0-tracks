@@ -3,7 +3,7 @@ require_relative 'Hangman'
 describe Hangman do 
 	let (:hangman) { Hangman.new }
 
-	it "stores a word and outputs the number of guesses which is word length + 5" do
+	it "can store a word and output the number of guesses i.e. word length + 5" do
 	expect(hangman.submit_puzzle_word("hats")).to eq 9
 	end 
 
@@ -27,7 +27,7 @@ describe Hangman do
 		expect(hangman.guesses_remaining).to eq 10
 	end
 
-	it "can a duplicate guess give an error" do
+	it "can a duplicate guess throw an error" do
 		hangman.submit_puzzle_word("potato")
 		hangman.submit_guess("z")
 		expect(hangman.submit_guess("z")).to eq "You already guessed this letter, please guess a new one"
@@ -43,7 +43,7 @@ describe Hangman do
 		expect(hangman.guesses_remaining).to eq 10
 	end
 
-	it "can two correct guess provide a correct game state" do
+	it "can two correct guesses provide a correct game state" do
 		hangman.submit_puzzle_word("potato")
 		expect(hangman.submit_guess("p")).to eq "Correct!"
 		expect(hangman.submit_guess("o")).to eq "Correct!"
