@@ -3,6 +3,7 @@ class Hangman
 	attr_accessor :guesses_remaining
 	attr_accessor :word_in_progress
 	attr_accessor :is_game_over
+	attr_accessor :letters_guessed
 
 	def initialize(puzzle_word = "", guesses_remaining = 0, is_game_over=false)
 		@puzzle_word = puzzle_word

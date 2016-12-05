@@ -22,6 +22,7 @@ describe Hangman do
 	it "after a word has been submitted, an incorrect guess gives a message and lowers the number of remaining guesses" do
 		hangman.submit_puzzle_word("potato")
 		expect(hangman.submit_guess("z")).to eq "Sorry, that was incorrect"
+		expect(hangman.letters_guessed).to eq ["z"]
 		expect(hangman.word_in_progress).to eq ["_","_","_","_","_","_"]
 		expect(hangman.guesses_remaining).to eq 10
 	end
@@ -34,6 +35,11 @@ describe Hangman do
 		expect(hangman.guesses_remaining).to eq 10
 	end
 
-
+	it "a correct guess gives an error" do
+		hangman.submit_puzzle_word("potato")
+		expect(hangman.submit_guess("p")).to eq "Correct!"
+		expect(hangman.word_in_progress).to eq ["p","_","_","_","_","_"]
+		expect(hangman.guesses_remaining).to eq 10
+	end
 
 end
