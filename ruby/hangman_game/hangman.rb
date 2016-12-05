@@ -28,20 +28,28 @@ class Hangman
 		elsif @letters_guessed.include? (letter) 
 			return "You already guessed this letter, please guess a new one"
 		else
-			@letters_guessed << letter
-			guesses_remaining -= 1
-			if @puzzle_word.include? letter
-
-				return "Correct!"
-			else
+			 @letters_guessed << letter
+			 @guesses_remaining -= 1
+			 if @puzzle_word.include? letter
+			 	return "Correct!"
+			 else
 				return "Sorry, that was incorrect"
-			end
-
+			 end
+		@puzzle_word
 		end
 
 	end
 
 	def check_if_game_over
+		if @word_in_progress.include? ("_") 
+			if guesses_remaining > 0
+				is_game_over = false
+			else is_game_over = true
+			end
+		else
+			is_game_over = true
+		end
+		return is_game_over
 	end
 
 end
@@ -56,6 +64,3 @@ end
 # puts "Now it's time to guess!" 
 # until @is_game_over
 # 	puts "Please submit a letter"
-
-	
-# end
