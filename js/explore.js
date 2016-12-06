@@ -4,10 +4,10 @@
 // 
 // 
 // 
-var original_string = "potatoes"
-var final_string = ""
+var original_string = "potatoes";
+var final_string = "";
 
 for (var i = original_string.length; i > 0; i-=1) {
-	final_string + charAt(i)
+	final_string + original_string.charAt(i);
 } 
-console.log (final_string)
+console.log (final_string);
