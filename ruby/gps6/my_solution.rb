@@ -98,3 +98,14 @@ end
 
 #=======================================================================
 # Reflection Section
+
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  # One uses a string as the key, the other a symbol. 
+# What does require_relative do? How is it different from require?
+  # it loads code from a file path that is relative to the originating file. Require only works if you give it the full path.
+# What are some ways to iterate through a hash?
+  # .map and .each are two common ways
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  # it was passing data through arguments when the data was stored in class variables that were accessible to the other methods.
+# What concept did you most solidify in this challenge?
+  # if I'm frequently repeating myself, there is probably a better way to do things.
