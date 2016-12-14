@@ -1,0 +1,11 @@
+
+SELECT * FROM farms;
+
+1	Raubach Farm	Mandy
+2	Lonely Owl Acres	Dale Dixon
+3	Asgard Arabians	Tom Sayvetz
+
+
+update farms SET owner = "Mandy Raubach" WHERE name = "Raubach Farm";
+
+
