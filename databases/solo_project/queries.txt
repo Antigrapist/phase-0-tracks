@@ -1,4 +1,3 @@
-
 SELECT * FROM farms;
 
 1	Raubach Farm	Mandy
@@ -9,3 +8,46 @@ SELECT * FROM farms;
 update farms SET owner = "Mandy Raubach" WHERE name = "Raubach Farm";
 
 
+select * from animals, farms where animals.farm_id = farms.id;
+
+"1"	"Star"	"2002"	"dog"	"f"	"1"	"1"	"Raubach Farm"	"Mandy Raubach"
+"2"	"Karis"	"1995"	"horse"	"m"	"1"	"1"	"Raubach Farm"	"Mandy Raubach"
+"3"	"Druug"	"1993"	"horse"	"m"	"3"	"3"	"Asgard Arabians"	"Tom Sayvetz"
+"4"	"Jimmy"	"2009"	"dog"	"m"	"3"	"3"	"Asgard Arabians"	"Tom Sayvetz"
+"5"	"Ma"	"2015"	"goat"	"f"	"2"	"2"	"Lonely Owl Acres"	"Dale Dixon"
+"6"	"Army"	"2010"	"goat"	"m"	"2"	"2"	"Lonely Owl Acres"	"Dale Dixon"
+"7"	"Aries"	"2014"	"dog"	"f"	"2"	"2"	"Lonely Owl Acres"	"Dale Dixon"
+
+select animals.name, animals.species, farms.name from animals, farms where animals.farm_id = farms.id;
+
+"Star"	"dog"	"Raubach Farm"
+"Karis"	"horse"	"Raubach Farm"
+"Druug"	"horse"	"Asgard Arabians"
+"Jimmy"	"dog"	"Asgard Arabians"
+"Ma"	"goat"	"Lonely Owl Acres"
+"Army"	"goat"	"Lonely Owl Acres"
+"Aries"	"dog"	"Lonely Owl Acres"
+
+
+delete from animals where id = "2";
+
+
+
+joins
+
+sqlite> select * from animals left join farms on animals.farm_id = farms.id;
+1|Star|2002|dog|f|1|1|Raubach Farm|Mandy Raubach
+3|Druug|1993|horse|m|3|3|Asgard Arabians|Tom Sayvetz
+4|Jimmy|2009|dog|m|3|3|Asgard Arabians|Tom Sayvetz
+5|Ma|2015|goat|f|2|2|Lonely Owl Acres|Dale Dixon
+6|Army|2010|goat|m|2|2|Lonely Owl Acres|Dale Dixon
+7|Aries|2014|dog|f|2|2|Lonely Owl Acres|Dale Dixon
+
+
+sqlite> select animals.name, animals.sex, farms.owner from animals inner join farms on animals.farm_id = farms.id;
+Star|f|Mandy Raubach
+Druug|m|Tom Sayvetz
+Jimmy|m|Tom Sayvetz
+Ma|f|Dale Dixon
+Army|m|Dale Dixon
+Aries|f|Dale Dixon
