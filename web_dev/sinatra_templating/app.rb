@@ -24,4 +24,28 @@ post '/students' do
   redirect '/'
 end
 
+get '/campuses' do
+  @campuses = db.execute("SELECT * FROM campuses;")
+  erb :campuses
+end
+
+get '/campuses/new' do
+  erb :new_campus
+end
+
+post '/campuses' do
+  db.execute("INSERT INTO campuses (name, location) VALUES (?,?)", [params[:name], params[:location]])
+  redirect "/campuses"
+end
+
+get '/campus/:name' do
+  @name = params[:name].upcase
+  @students = db.execute("SELECT * FROM students WHERE UPPER(campus) = UPPER(?);", [@name])
+  if @students.empty?
+    "This campus doesn't have any students."
+  else
+    erb :campus
+  end
+end
+
 # add static resources
